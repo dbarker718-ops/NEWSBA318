@@ -59,8 +59,8 @@ app.post('/checkout', async (req, res) => {
     ],
    
     success_url:
-      'http://YOUR-WEBSITE/dashboard?session_id={CHECKOUT_SESSION_ID}',
-    cancel_url: 'http://YOUR-WEBSITE/error',
+      'http://google.com',
+    cancel_url: 'http://google.com',
   });
 
   res.send(session);
@@ -85,7 +85,7 @@ app.post('/webhook', async (req, res) => {
         webhookSecret
       );
     } catch (err) {
-      console.log(`⚠️  Webhook signature verification failed.`);
+      console.log(`  Webhook signature verification failed.`);
       return res.sendStatus(400);
     }
    
