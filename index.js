@@ -59,8 +59,8 @@ app.post('/checkout', async (req, res) => {
     ],
    
     success_url:
-      'http://google.com',
-    cancel_url: 'http://google.com',
+      'test',
+    cancel_url: 'test',
   });
 
   res.send(session);
