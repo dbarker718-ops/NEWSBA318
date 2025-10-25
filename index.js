@@ -1,5 +1,8 @@
 import express from "express";
 import customerRouter from "./routes/customers.js";
+import paymentRouter from "./routes/payments.js";
+import listingRouter from "./routes/listings.js";
+
 const app = express();
 
 app.use(express.json());
@@ -10,6 +13,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/customers", customerRouter);
+app.use("/api/payments", paymentRouter);
+app.use("/api/listings", listingRouter);
 
 // Error handler
 app.use((err, req, res, next) => {

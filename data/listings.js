@@ -7,14 +7,14 @@ const listings = [
     bathrooms: 1,
   },
   {
-    id: 1,
+    id: 2,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean malesuada massa ac odio euismod, vel convallis mauris placerat. Vestibulum ante.",
     bedrooms: 2,
     bathrooms: 1.5,
   },
   {
-    id: 1,
+    id: 3,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean malesuada massa ac odio euismod, vel convallis mauris placerat. Vestibulum ante.",
     bedrooms: 3,
