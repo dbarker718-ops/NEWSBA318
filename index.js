@@ -2,22 +2,14 @@ import express from "express";
 import customerRouter from "./routes/customers.js";
 const app = express();
 
-app.use(
-  express.json({
-    verify: (req, res, buffer) => (req["rawBody"] = buffer),
-  })
-);
-
-
-
-
-
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
   res.send("Payment API");
 });
 
-app.use("/api/customers", customerRouter)
+app.use("/api/customers", customerRouter);
 
 // Error handler
 app.use((err, req, res, next) => {
