@@ -23,21 +23,33 @@ router
 
 router
   .route("/:id")
-  .patch((req, res, next) => {
+  .get((req, res, next) => {
     const listing = listings.find((l) => l.id == req.params.id);
     if (listing) res.json(listing);
-    else next({ status: 404, error: "Listing not found" });
+     else next({ status: 404, message: "Listing not found" });
   })
   .patch((req, res, next) => {
     const listing = listings.find((l, i) => {
       if (l.id == req.params.id) {
         for (const key in req.body) {
-          posts[i][key] = req.body[key];
+          listings[i][key] = req.body[key];
         }
         return true;
       }
     });
     if (listing) res.json(listing);
-    else next({ status: 404, error: "Listing not found" });
+    else next({ status: 404, message: "Listing not found" });
+  })
+  .delete((req, res, next) => {
+ 
+    const listing = listings.find((l, i) => {
+      if (l.id == req.params.id) {
+        listings.splice(i, 1);
+        return true;
+      }
+    });
+
+    if (listing) res.json(listing);
+     else next({ status: 404, message: "Listing not found" });
   });
 export default router;

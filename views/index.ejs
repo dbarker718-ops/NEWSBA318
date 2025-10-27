@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-   <p>
-    Hello World!!
-   </p> 
-</body>
+  </head>
+  <body>
+    <form method = "post" action="/api/listings">
+      <label for="description"
+        >description
+        <input type="text" name="description" id="description" />
+      </label>
+      <label for="bedrooms"
+        >Bedrooms
+        <input type="number" name="bedrooms" id="bedrooms" />
+      </label>
+      <label for="bathrooms"
+        >Bathrooms
+        <input type="number" name="bathrooms" id="bathrooms" />
+      </label>
+      <button type="submit">Create Listing</button>
+    </form>
+  </body>
 </html>
