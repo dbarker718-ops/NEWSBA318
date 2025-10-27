@@ -5,7 +5,13 @@ const router = express.Router();
 router
   .route("/")
   .get((req, res) => {
-    res.json(listings);
+    if (req.query.listingId) {
+      const listing = listings.find((l) => l.id == req.query.listingId);
+      if (listing) res.json(listing);
+      else next({ status: 404, message: "Listing not found" });
+    } else {
+      res.json(listings);
+    }
   })
   .post((req, res) => {
     console.log(req.body);
@@ -26,7 +32,7 @@ router
   .get((req, res, next) => {
     const listing = listings.find((l) => l.id == req.params.id);
     if (listing) res.json(listing);
-     else next({ status: 404, message: "Listing not found" });
+    else next({ status: 404, message: "Listing not found" });
   })
   .patch((req, res, next) => {
     const listing = listings.find((l, i) => {
@@ -41,7 +47,6 @@ router
     else next({ status: 404, message: "Listing not found" });
   })
   .delete((req, res, next) => {
- 
     const listing = listings.find((l, i) => {
       if (l.id == req.params.id) {
         listings.splice(i, 1);
@@ -50,6 +55,6 @@ router
     });
 
     if (listing) res.json(listing);
-     else next({ status: 404, message: "Listing not found" });
+    else next({ status: 404, message: "Listing not found" });
   });
 export default router;
