@@ -1,5 +1,5 @@
 # Payments app
-this is a payments app for my rental properties. 
+this is a listing app for my rental properties. 
 
 The data folder has been seperated by 3 files customers,listings, and payments.
 
