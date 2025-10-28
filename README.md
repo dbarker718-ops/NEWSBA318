@@ -1,4 +1,4 @@
-# Payments app
+# Listings app
 this is a listing app for my rental properties. 
 
 The data folder has been seperated by 3 files customers,listings, and payments.
